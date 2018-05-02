@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="example.com.monidome.ShouYe.ShouYeActivity">
+
+    <!--标题栏开始-->
+    <LinearLayout
+        android:background="#FFC1C1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:id="@+id/ErClick"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@mipmap/a_s" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@mipmap/fadajing" />
+
+            <EditText
+                android:id="@+id/selectShop"
+                android:hint="搜索笔记本"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@mipmap/root" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/info_show_type"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="5dp"
+            android:background="@mipmap/a9x"/>
+    </LinearLayout>
+    <!--标题栏结束-->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.youth.banner.Banner
+                android:id="@+id/shouyebanner"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"></com.youth.banner.Banner>
+            <ImageView
+                android:id="@+id/syiv"
+                android:layout_below="@+id/shouyebanner"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@mipmap/timg" />
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@+id/syiv"
+                android:id="@+id/grildrecycleview"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"/>
+
+            <LinearLayout
+                android:layout_below="@+id/zhuyerecycleview"
+                android:id="@+id/rlms"
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:background="@mipmap/lingdang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="京东秒杀:"
+                    android:textColor="#ff3660" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10点场" />
+
+                <TextView
+                    android:id="@+id/shouye_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#000"
+                    android:textColor="#fff"
+                    android:layout_marginRight="10dp"/>
+                <example.com.monidome.utils.LooperTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ltv"
+                    android:textColor="#acf813" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@+id/rlms"
+                android:id="@+id/shouyemiaoshao"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_below="@+id/zhuyerecycleview2"
+                android:id="@+id/shouyetuijian"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:gravity="center_horizontal"
+                android:textColor="#ff3360" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@+id/shouyetuijian"
+                android:id="@+id/zhuyerecycleview3"
+                android:layout_width="match_parent"
+                android:layout_height="1000dp">
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
